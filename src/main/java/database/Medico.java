@@ -10,18 +10,18 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "paciente")
-public class Paciente implements Serializable{
+@Table(name = "medico")
+public class Medico implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
     
-	private String nomePaciente; 
-	private String dataNascimento;
-	private String telefonePaciente;
-	private String descricao;
+	private String nomeMedico; 
+	private String especialidade;
+	private String telefoneMedico;
+	private String crm;
 	
 	public Integer getId() {
 		return id;
@@ -29,29 +29,29 @@ public class Paciente implements Serializable{
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getNomePaciente() {
-		return nomePaciente;
+	public String getNomeMedico() {
+		return nomeMedico;
 	}
-	public void setNomePaciente(String nomePaciente) {
-		this.nomePaciente = nomePaciente;
+	public void setNomeMedico(String nomeMedico) {
+		this.nomeMedico = nomeMedico;
 	}
-	public String getDataNascimento() {
-		return dataNascimento;
+	public String getEspecialidade() {
+		return especialidade;
 	}
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setEspecialidade(String especialidade) {
+		this.especialidade = especialidade;
 	}
-	public String getTelefonePaciente() {
-		return telefonePaciente;
+	public String getTelefoneMedico() {
+		return telefoneMedico;
 	}
-	public void setTelefonePaciente(String telefonePaciente) {
-		this.telefonePaciente = telefonePaciente;
+	public void setTelefoneMedico(String telefoneMedico) {
+		this.telefoneMedico = telefoneMedico;
 	}
-	public String getDescricao() {
-		return descricao;
+	public String getCrm() {
+		return crm;
 	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setCrm(String crm) {
+		this.crm = crm;
 	}
         
         @Override
@@ -72,7 +72,7 @@ public class Paciente implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Paciente other = (Paciente) obj;
+        final Medico other = (Medico) obj;
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
@@ -81,8 +81,10 @@ public class Paciente implements Serializable{
 
     @Override
     public String toString() {
-        return "Paciente{" + "id=" + id + ", nomePaciente=" + nomePaciente + ", dataNascimento=" + dataNascimento + ", telefonePaciente=" + telefonePaciente + ", descricao=" + descricao + '}';
+        return "Medico{" + "id=" + id + ", nomeMedico=" + nomeMedico + ", especialidade=" + especialidade + ", telefoneMedico=" + telefoneMedico + ", crm=" + crm + '}';
     }
+
+    
         
 
 }
